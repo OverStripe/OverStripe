@@ -1,101 +1,50 @@
-/* Full-Screen Background Video */
-.background-video {
+/* Full-Screen YouTube Video Embed */
+.video-wrapper {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    overflow: hidden;
     z-index: -1;
 }
 
-/* Neon Border */
-.neon-border {
-    border: 4px solid #00ffff;
-    border-radius: 20px;
-    padding: 20px;
-    width: 80%;
-    height: 400px;
-    margin: auto;
-    margin-top: 50px;
-    box-shadow: 
-        0 0 20px rgba(0, 255, 255, 0.5), 
-        0 0 40px rgba(0, 255, 255, 0.5), 
-        0 0 60px rgba(0, 255, 255, 0.5);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5em;
-    color: #fff;
-}
-
-/* Neon Blinking Button */
-.neon-button {
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 1.2em;
-    color: #fff;
-    text-decoration: none;
-    border: 2px solid #00ffff;
-    border-radius: 5px;
-    transition: 0.3s;
-    box-shadow: 
-        0 0 10px #00ffff, 
-        0 0 20px #00ffff, 
-        0 0 30px #00ffff;
-}
-
-.neon-button:hover {
-    background-color: rgba(0, 255, 255, 0.2);
-    box-shadow: 
-        0 0 20px #00ffff, 
-        0 0 40px #00ffff, 
-        0 0 60px #00ffff;
-}
-
-/* Neon Blinking Developer Box */
-.neon-developer-box {
-    color: #00ffff;
-    font-size: 1.3em;
-    text-align: center;
-    margin-top: 30px;
-    animation: blink 1.5s infinite alternate;
-}
-
-@keyframes blink {
-    0% { opacity: 1; }
-    100% { opacity: 0.6; }
-}
-
-/* Snow Container */
-.snow-container {
-    position: fixed;
-    top: 0;
-    left: 0;
+.background-video {
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    z-index: 2;
-    overflow: hidden;
-}
-
-/* Snowflake Styling */
-.snowflake {
     position: absolute;
-    top: -10px;
-    width: 8px;
-    height: 8px;
-    background-color: #fff;
-    border-radius: 50%;
-    opacity: 0.8;
+    top: 0;
+    left: 0;
     pointer-events: none;
-    animation: fall linear infinite;
-    filter: blur(1px);
 }
 
-@keyframes fall {
-    to {
-        transform: translateY(100vh);
+/* Animated OverStripe Title */
+.animated-title {
+    position: fixed;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    font-size: 4em;
+    color: #00ffff;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff);
+    background-size: 200%;
+    color: transparent;
+    -webkit-background-clip: text;
+    animation: glow-animation 3s linear infinite;
+}
+
+/* Glowing Stripe Animation */
+@keyframes glow-animation {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 200%;
     }
 }
