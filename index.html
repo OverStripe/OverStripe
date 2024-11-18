@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Festival Countdown - OverStripe</title>
-    <meta name="description" content="Festival Countdown with animated clock, auto-updating festival greetings, and snowfall for winter events.">
+    <meta name="description" content="Festival Countdown with animated clock, personalized greetings, and options to share or download.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Snowflakes and Other Floating Decorations -->
-    <div class="decorations" id="decorations" aria-hidden="true">
-        <!-- Decorations will be dynamically added here based on the festival -->
-    </div>
+    <!-- Decorations for Festival -->
+    <div class="decorations" id="decorations" aria-hidden="true"></div>
 
     <div class="container">
         <!-- Animated Clock -->
@@ -19,9 +17,15 @@
             <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
         </div>
 
-        <!-- Festival Message and Countdown -->
+        <!-- Personalized Festival Message and Countdown -->
         <h1 class="neon-text" id="festivalMessage">Festival Season 🎉</h1>
         <p class="countdown" id="countdownText"></p>
+
+        <!-- Action Buttons -->
+        <div class="buttons">
+            <button id="shareWhatsapp" class="action-btn">Share on WhatsApp</button>
+            <button id="downloadGreeting" class="action-btn">Download Greeting</button>
+        </div>
 
         <!-- Developer Button -->
         <a href="https://t.me/TechPiro" class="developer-btn" target="_blank">Developer - @TechPiro</a>
