@@ -3,32 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Festival Countdown - OverStripe</title>
-    <meta name="description" content="Festival Countdown with animated clock, personalized greetings, and options to share or download.">
+    <title>OverStripe Image Gallery</title>
+    <meta name="description" content="Neon-themed Image Gallery with Lightbox, Download, and Telegram Bot Integration.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Decorations for Festival -->
-    <div class="decorations" id="decorations" aria-hidden="true"></div>
+    <header>
+        <h1>OverStripe Neon Gallery</h1>
+        <p>Browse, download, and view images in full-screen mode with a neon theme.</p>
+    </header>
 
-    <div class="container">
-        <!-- Animated Clock -->
-        <div class="clock">
-            <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
-        </div>
+    <!-- Image Gallery -->
+    <div class="gallery" id="gallery">
+        <!-- Images will be dynamically added here -->
+    </div>
 
-        <!-- Personalized Festival Message and Countdown -->
-        <h1 class="neon-text" id="festivalMessage">Festival Season 🎉</h1>
-        <p class="countdown" id="countdownText"></p>
-
-        <!-- Action Buttons -->
-        <div class="buttons">
-            <button id="shareWhatsapp" class="action-btn">Share on WhatsApp</button>
-            <button id="downloadGreeting" class="action-btn">Download Greeting</button>
-        </div>
-
-        <!-- Developer Button -->
-        <a href="https://t.me/TechPiro" class="developer-btn" target="_blank">Developer - @TechPiro</a>
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-image" id="lightboxImage" src="" alt="Expanded Image">
+        <button id="downloadImage" class="download-btn">Download</button>
     </div>
 
     <script src="script.js"></script>
