@@ -3,22 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OverStripe</title>
+    <title>OverStripe - Instagram Photo, Video & Caption Downloader</title>
+    <meta name="description" content="OverStripe - Download Instagram photos, videos, reels, and captions. The fast, free, and easy-to-use Instagram downloader tool.">
+    <meta name="keywords" content="Instagram downloader, download Instagram photos, Instagram video downloader, Instagram caption downloader, OverStripe">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="background-animation"></div>
-    <header class="header">
-        <h1 class="neon-title">Welcome to Over Stripe</h1>
+    <header>
+        <h1>OverStripe</h1>
+        <p>Fast and Free Instagram Downloader</p>
     </header>
+
     <main>
-        <section class="content">
-            <p>Experience cutting-edge design and smooth performance, crafted for a modern web experience.</p>
-            <a href="https://t.me/ShineStocks" target="_blank" class="neon-button">Visit Our Shop</a>
+        <section class="download-section">
+            <h2>Download Instagram Photos, Videos, and Captions</h2>
+            <p>Paste the Instagram URL below to get started.</p>
+            <div class="input-container">
+                <input type="text" id="instagramUrl" placeholder="Enter Instagram post URL" />
+                <button onclick="fetchInstagramData()">Download</button>
+            </div>
+            <div class="loader" id="loader" style="display: none;"></div>
+
+            <!-- Results Display -->
+            <div class="content-container" id="contentContainer" style="display: none;">
+                <h3>Caption:</h3>
+                <p id="captionText"></p>
+                <button onclick="copyCaption()">Copy Caption</button>
+
+                <h3>Media:</h3>
+                <img id="mediaImage" src="" alt="Instagram Media" style="display: none;">
+                <video id="mediaVideo" controls style="display: none;"></video>
+                <div class="download-buttons">
+                    <button onclick="downloadMedia()" id="downloadButton" style="display: none;">Download Media</button>
+                    <button onclick="copyMediaLink()" id="copyLinkButton" style="display: none;">Copy Media Link</button>
+                </div>
+            </div>
         </section>
     </main>
+
     <footer>
-        <p class="neon-text">Developer - @OverStripe</p>
+        <p>&copy; 2025 OverStripe | Fast Instagram Downloader</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
