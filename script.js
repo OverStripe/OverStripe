@@ -3,7 +3,6 @@ const festivals = [
     { name: "Christmas", date: "2024-12-25" },
     { name: "New Year", date: "2025-01-01" },
     { name: "Valentine's Day", date: "2025-02-14" },
-    // Add more festivals as needed
 ];
 
 // Display Animated Clock
@@ -34,21 +33,16 @@ function updateFestivalMessage() {
             const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-            festivalMessage.textContent = `🎉 ${festival.name} Coming Soon! 🎉`;
-            countdownText.textContent = `Time Left: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+            festivalMessage.textContent = `${festival.name} Coming 🎉`;
+            countdownText.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
             // Show snow animation if Christmas or New Year
-            if (festival.name === "Christmas" || festival.name === "New Year") {
-                document.body.classList.add("snow");
-            } else {
-                document.body.classList.remove("snow");
-            }
+            document.body.classList.toggle("snow", ["Christmas", "New Year"].includes(festival.name));
             return;
         }
     }
 
-    // Default message if no upcoming festivals
-    festivalMessage.textContent = "🎉 Welcome to the Festival Season! 🎉";
+    festivalMessage.textContent = "Festival Season 🎉";
     countdownText.textContent = "";
     document.body.classList.remove("snow");
 }
