@@ -3,22 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy New Year 2025 - OverStripe</title>
-    <meta name="description" content="Animated Happy New Year 2025 with neon glow, animated lights, and colorful background.">
+    <title>Dynamic Festival Countdown - OverStripe</title>
+    <meta name="description" content="Dynamic Festival Countdown with animated clock, festival greetings, and falling snow for winter events.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Rotating Ring of Neon Lights -->
-        <div class="neon-ring"></div>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+    </div>
 
-        <!-- Happy New Year Message -->
-        <h1 class="neon-text">🎉 Happy New Year 2025! 🎉</h1>
-        <p class="subtext">May the New Year bring you joy, peace, and prosperity!</p>
+    <div class="container">
+        <!-- Animated Clock -->
+        <div class="clock">
+            <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+        </div>
+
+        <!-- Festival Message and Countdown -->
+        <h1 class="neon-text" id="festivalMessage">🎉 Welcome to the Festival Season! 🎉</h1>
+        <p class="countdown" id="countdownText"></p>
     </div>
 
     <footer>
         <p>Developed by <a href="https://t.me/TechPiro" target="_blank">@TechPiro on Telegram</a></p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
