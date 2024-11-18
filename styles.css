@@ -10,92 +10,40 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
     background-color: black;
+    overflow: hidden;
 }
 
-/* Fire Background with Flickering Effect */
-.fire-background {
+.eye-container {
+    display: flex;
+    gap: 50px;
+}
+
+.eye {
+    width: 100px;
+    height: 100px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000, 0 0 45px #ff4500, 0 0 60px #ff4500;
+    position: relative;
+    overflow: hidden;
+    animation: blink 3s infinite ease-in-out;
+}
+
+.pupil {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #ff0000, #ff8c00, #ffd700);
-    background-size: 400% 400%;
-    animation: fire 3s ease infinite, flicker 0.1s infinite;
-    filter: blur(15px);
-    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0 0 10px #ff0000;
 }
 
-@keyframes fire {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-@keyframes flicker {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.9; }
-}
-
-/* Main Content Styling */
-.content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-}
-
-/* Enhanced Danger Sign */
-.danger-sign {
-    font-size: 4rem;
-    color: #ff0000;
-    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff4500, 0 0 40px #ff4500;
-    animation: pulse 1.5s infinite alternate, rotate 3s infinite linear;
-    font-family: 'Courier New', Courier, monospace;
-    margin-bottom: 20px;
-}
-
-@keyframes pulse {
-    from { transform: scale(1); opacity: 1; }
-    to { transform: scale(1.2); opacity: 0.8; }
-}
-
-@keyframes rotate {
-    0%, 100% { transform: rotate(0deg); }
-    50% { transform: rotate(-5deg); }
-}
-
-/* Glitch Effect for Hacked Message */
-.hacked-message h1 {
-    font-size: 3rem;
-    color: #ff0000;
-    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff4500, 0 0 40px #ff4500;
-    position: relative;
-    animation: glitch 1s infinite;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-@keyframes glitch {
-    0% {
-        transform: translate(0);
-        opacity: 1;
-    }
-    20% {
-        transform: translate(-2px, -2px);
-    }
-    40% {
-        transform: translate(2px, 2px);
-        opacity: 0.8;
-    }
-    60% {
-        transform: translate(-2px, 2px);
-    }
-    80% {
-        transform: translate(2px, -2px);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(0);
-    }
+/* Blinking Animation */
+@keyframes blink {
+    0%, 20%, 60%, 100% { transform: scaleY(1); }
+    40%, 80% { transform: scaleY(0); }
 }
