@@ -1,115 +1,61 @@
-// Function to fetch Instagram data using the RapidAPI endpoint
-async function fetchInstagramData() {
-    const url = document.getElementById("instagramUrl").value;
-    const loader = document.getElementById("loader");
-    const contentContainer = document.getElementById("contentContainer");
+// Festival Calendar
+const festivals = [
+    { name: "Christmas", date: "2024-12-25" },
+    { name: "New Year", date: "2025-01-01" },
+    { name: "Valentine's Day", date: "2025-02-14" },
+    // Add more festivals as needed
+];
 
-    if (!url) {
-        alert("Please enter an Instagram URL.");
-        return;
-    }
+// Display Animated Clock
+function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
 
-    // Show loading spinner
-    loader.style.display = "inline-block";
-    contentContainer.style.display = "none";
-
-    try {
-        // Make API request to fetch Instagram data
-        const response = await fetchInstagramMediaData(url);
-        if (response) {
-            displayContent(response);
-        } else {
-            alert("Failed to fetch data. Please check the URL or try again later.");
-        }
-    } catch (error) {
-        console.error("Error fetching Instagram data:", error);
-        alert("Failed to fetch data. Please check the URL or try again later.");
-    } finally {
-        loader.style.display = "none";
-    }
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
 }
 
-// Function to call the Instagram Reels Downloader API using fetch
-async function fetchInstagramMediaData(instagramUrl) {
-    const apiUrl = `https://instagram-reels-downloader2.p.rapidapi.com/.netlify/functions/api/getLink?url=${encodeURIComponent(instagramUrl)}`;
-    
-    try {
-        const response = await fetch(apiUrl, {
-            method: "GET",
-            headers: {
-                "x-rapidapi-host": "instagram-reels-downloader2.p.rapidapi.com",
-                "x-rapidapi-key": "c62e48bd40msh4642d577e91621fp12c6e3jsn96865737741c"
+// Find Next Festival and Update Message
+function updateFestivalMessage() {
+    const now = new Date();
+    const countdownText = document.getElementById("countdownText");
+    const festivalMessage = document.getElementById("festivalMessage");
+
+    for (let festival of festivals) {
+        const festivalDate = new Date(festival.date + "T00:00:00");
+        const timeDifference = festivalDate - now;
+
+        if (timeDifference > 0) {
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            festivalMessage.textContent = `🎉 ${festival.name} Coming Soon! 🎉`;
+            countdownText.textContent = `Time Left: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            // Show snow animation if Christmas or New Year
+            if (festival.name === "Christmas" || festival.name === "New Year") {
+                document.body.classList.add("snow");
+            } else {
+                document.body.classList.remove("snow");
             }
-        });
-
-        if (response.ok) {
-            const data = await response.json();
-            return {
-                caption: data.caption || "No caption available", // Check for caption; default if not present
-                mediaUrl: data.link,   // Assuming `data.link` contains the URL to the media
-                mediaType: data.type   // Assuming `data.type` indicates "image" or "video"
-            };
-        } else {
-            throw new Error("Failed to fetch data from API");
+            return;
         }
-    } catch (error) {
-        console.error("Error fetching data:", error);
-        throw error;
-    }
-}
-
-// Display the content in HTML
-function displayContent(data) {
-    const captionText = document.getElementById("captionText");
-    const mediaImage = document.getElementById("mediaImage");
-    const mediaVideo = document.getElementById("mediaVideo");
-    const downloadButton = document.getElementById("downloadButton");
-    const copyLinkButton = document.getElementById("copyLinkButton");
-
-    captionText.innerText = data.caption;
-    document.getElementById("contentContainer").style.display = "block";
-
-    if (data.mediaType === "image") {
-        mediaImage.src = data.mediaUrl;
-        mediaImage.style.display = "block";
-        mediaVideo.style.display = "none";
-    } else if (data.mediaType === "video") {
-        mediaVideo.src = data.mediaUrl;
-        mediaVideo.style.display = "block";
-        mediaImage.style.display = "none";
     }
 
-    // Set up download button and copy link button with media URL
-    downloadButton.style.display = "inline";
-    downloadButton.setAttribute("data-url", data.mediaUrl);
-
-    copyLinkButton.style.display = "inline";
-    copyLinkButton.setAttribute("data-url", data.mediaUrl);
+    // Default message if no upcoming festivals
+    festivalMessage.textContent = "🎉 Welcome to the Festival Season! 🎉";
+    countdownText.textContent = "";
+    document.body.classList.remove("snow");
 }
 
-// Copy caption to clipboard
-function copyCaption() {
-    const captionText = document.getElementById("captionText").innerText;
-    navigator.clipboard.writeText(captionText).then(() => {
-        alert("Caption copied to clipboard!");
-    });
-}
+// Initialize Clock and Festival Updates
+setInterval(updateClock, 1000);
+setInterval(updateFestivalMessage, 1000);
 
-// Download media (image or video)
-function downloadMedia() {
-    const url = document.getElementById("downloadButton").getAttribute("data-url");
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = url.split("/").pop(); // Automatically set the filename
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-}
-
-// Copy media link to clipboard
-function copyMediaLink() {
-    const url = document.getElementById("copyLinkButton").getAttribute("data-url");
-    navigator.clipboard.writeText(url).then(() => {
-        alert("Media link copied to clipboard!");
-    });
-}
+updateClock();
+updateFestivalMessage();
