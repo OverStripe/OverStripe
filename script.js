@@ -1,4 +1,4 @@
-// Show loader and fetch data
+// Function to fetch Instagram data using the RapidAPI endpoint
 async function fetchInstagramData() {
     const url = document.getElementById("instagramUrl").value;
     const loader = document.getElementById("loader");
@@ -14,27 +14,48 @@ async function fetchInstagramData() {
     contentContainer.style.display = "none";
 
     try {
-        // Simulate fetching Instagram data
-        const response = await fakeApiCall(url); // Replace with actual API request
-        displayContent(response);
+        // Make API request to fetch Instagram data
+        const response = await fetchInstagramMediaData(url);
+        if (response) {
+            displayContent(response);
+        } else {
+            alert("Failed to fetch data. Please check the URL or try again later.");
+        }
     } catch (error) {
+        console.error("Error fetching Instagram data:", error);
         alert("Failed to fetch data. Please check the URL or try again later.");
     } finally {
         loader.style.display = "none";
     }
 }
 
-// Placeholder function for real API call
-async function fakeApiCall(url) {
-    // Simulated delay
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+// Function to call the Instagram Reels Downloader API using fetch
+async function fetchInstagramMediaData(instagramUrl) {
+    const apiUrl = `https://instagram-reels-downloader2.p.rapidapi.com/.netlify/functions/api/getLink?url=${encodeURIComponent(instagramUrl)}`;
+    
+    try {
+        const response = await fetch(apiUrl, {
+            method: "GET",
+            headers: {
+                "x-rapidapi-host": "instagram-reels-downloader2.p.rapidapi.com",
+                "x-rapidapi-key": "c62e48bd40msh4642d577e91621fp12c6e3jsn96865737741c"
+            }
+        });
 
-    // Sample response
-    return {
-        caption: "This is a sample caption from Instagram.",
-        mediaUrl: "https://example.com/sample.jpg",
-        mediaType: "image" // "video" or "image"
-    };
+        if (response.ok) {
+            const data = await response.json();
+            return {
+                caption: data.caption || "No caption available", // Check for caption; default if not present
+                mediaUrl: data.link,   // Assuming `data.link` contains the URL to the media
+                mediaType: data.type   // Assuming `data.type` indicates "image" or "video"
+            };
+        } else {
+            throw new Error("Failed to fetch data from API");
+        }
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        throw error;
+    }
 }
 
 // Display the content in HTML
@@ -58,6 +79,7 @@ function displayContent(data) {
         mediaImage.style.display = "none";
     }
 
+    // Set up download button and copy link button with media URL
     downloadButton.style.display = "inline";
     downloadButton.setAttribute("data-url", data.mediaUrl);
 
@@ -73,12 +95,12 @@ function copyCaption() {
     });
 }
 
-// Download media
+// Download media (image or video)
 function downloadMedia() {
     const url = document.getElementById("downloadButton").getAttribute("data-url");
     const a = document.createElement("a");
     a.href = url;
-    a.download = url.split("/").pop();
+    a.download = url.split("/").pop(); // Automatically set the filename
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
