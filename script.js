@@ -1,3 +1,10 @@
+// Ask for user's name and store it
+let userName = localStorage.getItem("userName");
+if (!userName) {
+    userName = prompt("What's your name?");
+    localStorage.setItem("userName", userName || "Friend");
+}
+
 // Festival Calendar
 const festivals = [
     { name: "Christmas", date: "2024-12-25", decorations: ["❄", "🎄", "❅"] },
@@ -17,7 +24,7 @@ function updateClock() {
     document.getElementById("seconds").textContent = seconds;
 }
 
-// Find Next Festival and Update Message
+// Update Festival Message
 function updateFestivalMessage() {
     const now = new Date();
     const countdownText = document.getElementById("countdownText");
@@ -34,7 +41,7 @@ function updateFestivalMessage() {
             const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-            festivalMessage.textContent = `${festival.name} Coming 🎉`;
+            festivalMessage.textContent = `Happy ${festival.name}, ${userName}! 🎉`;
             countdownText.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
             // Update decorations for the festival
@@ -51,10 +58,28 @@ function updateFestivalMessage() {
         }
     }
 
-    festivalMessage.textContent = "Festival Season 🎉";
+    festivalMessage.textContent = `Enjoy the Festival Season, ${userName}! 🎉`;
     countdownText.textContent = "";
     decorationsContainer.innerHTML = "";
 }
+
+// Share Greeting on WhatsApp
+document.getElementById("shareWhatsapp").addEventListener("click", () => {
+    const message = `Hello ${userName}! Wishing you a very Happy Festival Season! 🌟`;
+    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+});
+
+// Download Greeting Image
+document.getElementById("downloadGreeting").addEventListener("click", () => {
+    const element = document.querySelector(".container");
+    html2canvas(element).then(canvas => {
+        const link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = `Festival_Greeting_${userName}.png`;
+        link.click();
+    });
+});
 
 // Initialize Clock and Festival Updates
 setInterval(updateClock, 1000);
