@@ -1,8 +1,8 @@
 // Festival Calendar
 const festivals = [
-    { name: "Christmas", date: "2024-12-25" },
-    { name: "New Year", date: "2025-01-01" },
-    { name: "Valentine's Day", date: "2025-02-14" },
+    { name: "Christmas", date: "2024-12-25", decorations: ["❄", "🎄", "❅"] },
+    { name: "New Year", date: "2025-01-01", decorations: ["🎆", "✨", "🎇"] },
+    { name: "Valentine's Day", date: "2025-02-14", decorations: ["💖", "💘", "❤️"] },
 ];
 
 // Display Animated Clock
@@ -22,6 +22,7 @@ function updateFestivalMessage() {
     const now = new Date();
     const countdownText = document.getElementById("countdownText");
     const festivalMessage = document.getElementById("festivalMessage");
+    const decorationsContainer = document.getElementById("decorations");
 
     for (let festival of festivals) {
         const festivalDate = new Date(festival.date + "T00:00:00");
@@ -36,15 +37,23 @@ function updateFestivalMessage() {
             festivalMessage.textContent = `${festival.name} Coming 🎉`;
             countdownText.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-            // Show snow animation if Christmas or New Year
-            document.body.classList.toggle("snow", ["Christmas", "New Year"].includes(festival.name));
+            // Update decorations for the festival
+            decorationsContainer.innerHTML = "";
+            festival.decorations.forEach(icon => {
+                const decoration = document.createElement("div");
+                decoration.className = "decoration";
+                decoration.textContent = icon;
+                decoration.style.left = `${Math.random() * 100}%`;
+                decoration.style.animationDuration = `${5 + Math.random() * 5}s`;
+                decorationsContainer.appendChild(decoration);
+            });
             return;
         }
     }
 
     festivalMessage.textContent = "Festival Season 🎉";
     countdownText.textContent = "";
-    document.body.classList.remove("snow");
+    decorationsContainer.innerHTML = "";
 }
 
 // Initialize Clock and Festival Updates
