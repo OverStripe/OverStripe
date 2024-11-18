@@ -3,18 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portrait YouTube Video Loop</title>
+    <title>Portrait YouTube Video with Neon Developer Box and Snowfall</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="video-container">
-        <iframe
-            class="portrait-video"
-            src="https://www.youtube.com/embed/Z90rTdVoomY?autoplay=1&mute=1&loop=1&playlist=Z90rTdVoomY"
-            title="YouTube video"
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-        ></iframe>
+    <!-- Full-Screen Background Video -->
+    <video autoplay muted loop class="background-video">
+        <source src="Dark black red eyes live wallpaper 🖤❤ - Riya (720p, h264, youtube).mp4" type="video/mp4">
+    </video>
+
+    <!-- Neon Border Container -->
+    <div class="neon-border"></div>
+
+    <!-- Set Wallpaper Button -->
+    <a href="https://t.me/TechPiro" target="_blank" class="neon-button" id="setWallpaperButton">Set Wallpaper</a>
+
+    <!-- Neon Blinking Developer Box -->
+    <div class="neon-developer-box">
+        Developer - <a href="https://t.me/TechPiro" target="_blank">@TechPiro</a>
     </div>
+
+    <!-- Snow Container -->
+    <div class="snow-container"></div>
+
+    <!-- Corrected Script Tag -->
+    <script src="script.js"></script>
 </body>
 </html>
