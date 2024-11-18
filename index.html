@@ -3,25 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OverStripe Animated Title</title>
+    <title>Full-Screen Video with Snowfall</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Full-Screen YouTube Video Embed -->
-    <div class="video-wrapper">
-        <iframe
-            class="background-video"
-            src="https://www.youtube.com/embed/Z90rTdVoomY?si=YFKYkPAou-eCajyv&autoplay=1&mute=1&loop=1&playlist=Z90rTdVoomY&controls=0&showinfo=0&modestbranding=1"
-            frameborder="0"
-            allow="autoplay; encrypted-media"
-            allowfullscreen>
-        </iframe>
-    </div>
+    <!-- Full-Screen Background Video -->
+    <video autoplay muted loop class="background-video">
+        <source src="VID_20241119_004432_773.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-    <!-- Animated Title Overlay -->
-    <div class="animated-title">
-        OverStripe
-    </div>
+    <!-- Snow Container -->
+    <div class="snow-container"></div>
 
     <script src="script.js"></script>
 </body>
