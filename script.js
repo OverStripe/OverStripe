@@ -1,30 +1,24 @@
-// Function to create and animate a snowflake element with random properties
-function createSnowflake() {
-    // Create a div element for the snowflake
-    const snowflake = document.createElement("div");
-    snowflake.classList.add("snowflake");
+document.addEventListener("DOMContentLoaded", function () {
+    // Create snowflakes and add them to the document
+    const snowContainer = document.querySelector(".snow-container");
 
-    // Set random horizontal position, size, opacity, and fall duration
-    snowflake.style.left = `${Math.random() * 100}vw`;
-    snowflake.style.width = `${Math.random() * 8 + 3}px`; // Random size between 3px and 11px
-    snowflake.style.height = snowflake.style.width; // Keep snowflake circular
-    snowflake.style.opacity = Math.random() * 0.6 + 0.4; // Random opacity between 0.4 and 1
-    snowflake.style.animationDuration = `${Math.random() * 5 + 3}s`; // Random fall duration between 3s and 8s
-    snowflake.style.animationDelay = `${Math.random() * 2}s`; // Random start delay for smoother appearance
+    function createSnowflake() {
+        const snowflake = document.createElement("div");
+        snowflake.classList.add("snowflake");
+        snowflake.textContent = "❄"; // Snowflake symbol
 
-    // Append the snowflake to the snow container
-    document.querySelector(".snow-container").appendChild(snowflake);
+        // Random position and size for each snowflake
+        snowflake.style.left = Math.random() * 100 + "vw";
+        snowflake.style.fontSize = Math.random() * 1.5 + 0.5 + "em";
+        snowflake.style.animationDuration = Math.random() * 3 + 5 + "s";
 
-    // Remove the snowflake after it finishes falling to prevent memory issues
-    setTimeout(() => {
-        snowflake.remove();
-    }, parseFloat(snowflake.style.animationDuration) * 1000);
-}
+        // Append to container and remove after falling
+        snowContainer.appendChild(snowflake);
+        setTimeout(() => {
+            snowflake.remove();
+        }, 8000); // Match the longest animation duration
+    }
 
-// Function to start generating snowflakes at regular intervals
-function startSnowfall() {
-    setInterval(createSnowflake, 100); // Create a new snowflake every 100ms
-}
-
-// Start the snowfall effect once the page has fully loaded
-window.onload = startSnowfall;
+    // Generate snowflakes at intervals
+    setInterval(createSnowflake, 300);
+});
