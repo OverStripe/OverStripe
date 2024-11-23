@@ -1,0 +1,148 @@
+/* General Styling */
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #020024, #090979, #00d4ff);
+    color: white;
+    height: 100vh;
+}
+
+/* Background */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #020024, #090979, #00d4ff);
+    animation: backgroundAnimation 10s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes backgroundAnimation {
+    0% { background: linear-gradient(to bottom, #020024, #090979, #00d4ff); }
+    50% { background: linear-gradient(to bottom, #001f3f, #005f99, #00ffaa); }
+    100% { background: linear-gradient(to bottom, #020024, #090979, #00d4ff); }
+}
+
+/* Ground */
+.ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+    background: radial-gradient(circle, #004d00, #001a00);
+    z-index: 1;
+}
+
+/* Glowing Tree */
+.tree {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 250px;
+    background: linear-gradient(to top, #0f0, #0a0);
+    border-radius: 10px;
+    box-shadow: 0 0 30px #00ff00;
+    z-index: 2;
+    animation: treeGlow 5s infinite ease-in-out;
+}
+
+@keyframes treeGlow {
+    0%, 100% { box-shadow: 0 0 30px #00ff00; }
+    50% { box-shadow: 0 0 50px #00ff66; }
+}
+
+.tree .branches {
+    position: absolute;
+    top: -100px;
+    left: -50px;
+    width: 200px;
+    height: 150px;
+    background: radial-gradient(circle, #00ff66, #009933);
+    border-radius: 50%;
+    animation: branchesGlow 5s infinite ease-in-out;
+}
+
+/* Flying Butterflies */
+#butterfly-container .butterfly {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, #ff0099, #ff66cc);
+    border-radius: 50%;
+    animation: butterflyFly 6s infinite linear;
+}
+
+@keyframes butterflyFly {
+    0% { transform: translate(0, 0) rotate(0); }
+    50% { transform: translate(100px, -50px) rotate(45deg); }
+    100% { transform: translate(200px, 0) rotate(90deg); }
+}
+
+/* Flying Birds */
+#bird-container .bird {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    background: #ffffff;
+    clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%);
+    animation: birdFly 10s infinite linear;
+}
+
+@keyframes birdFly {
+    0% { transform: translateX(-50px) translateY(0); }
+    50% { transform: translateX(500px) translateY(-100px); }
+    100% { transform: translateX(1000px) translateY(0); }
+}
+
+/* Moving Ants */
+#ant-container {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    height: 5%;
+}
+
+.ant {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: black;
+    border-radius: 50%;
+    animation: antMove 10s infinite linear;
+}
+
+.ant:nth-child(1) { left: 10%; animation-delay: 0s; }
+.ant:nth-child(2) { left: 20%; animation-delay: 2s; }
+.ant:nth-child(3) { left: 30%; animation-delay: 4s; }
+
+@keyframes antMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(800px); }
+}
+
+/* Title */
+.title {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 4;
+}
+
+.title h1 {
+    font-size: 3rem;
+    color: #00ff99;
+    text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff66;
+}
+
+.title p {
+    font-size: 1.2rem;
+    color: #ccffcc;
+    text-shadow: 0 0 5px #00ff99;
+}
