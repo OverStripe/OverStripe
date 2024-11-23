@@ -3,21 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flash Shine</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Nature-Themed Website</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            transition: background-color 1s ease-in-out;
+        }
+
+        /* Background colors for different times of day */
+        body.daytime {
+            background-color: #87CEEB; /* Sky blue */
+        }
+
+        body.evening {
+            background-color: #FFD700; /* Golden yellow */
+        }
+
+        body.night {
+            background-color: #1B1B3A; /* Deep blue */
+        }
+
+        /* The ground */
+        .ground {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 20%;
+            background: #228B22; /* Forest green */
+        }
+
+        /* Sun */
+        .sun {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            border-radius: 50%;
+            box-shadow: 0 0 50px 20px rgba(255, 255, 0, 0.5);
+            transition: opacity 1s ease-in-out;
+        }
+
+        .sun.hidden {
+            opacity: 0; /* Hide the sun at night */
+        }
+
+        /* Moon */
+        .moon {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.8);
+            transition: opacity 1s ease-in-out;
+            opacity: 0; /* Hidden by default */
+        }
+
+        .moon.visible {
+            opacity: 1; /* Show the moon at night */
+        }
+
+        /* Stars */
+        .star {
+            position: absolute;
+            background: white;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            animation: twinkle 2s infinite ease-in-out alternate;
+        }
+
+        @keyframes twinkle {
+            from { opacity: 0.2; }
+            to { opacity: 1; }
+        }
+
+        .stars {
+            display: none; /* Hidden during the day */
+        }
+
+        .stars.visible {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <!-- Neon Border Container -->
-    <div class="neon-border"></div>
+    <!-- Sun -->
+    <div class="sun"></div>
 
-    <!-- Neon Blinking Developer Box with Flash Shine -->
-    <div class="neon-developer-box">
-        Developer - <a href="https://t.me/TechPiro" target="_blank">@TechPiro</a>
+    <!-- Moon -->
+    <div class="moon"></div>
+
+    <!-- Stars -->
+    <div class="stars">
+        <div class="star" style="top: 50px; left: 100px;"></div>
+        <div class="star" style="top: 80px; left: 200px;"></div>
+        <div class="star" style="top: 20px; left: 300px;"></div>
+        <div class="star" style="top: 100px; left: 400px;"></div>
     </div>
 
-    <!-- Snowfall Container -->
-    <div class="snow-container"></div>
+    <!-- Ground -->
+    <div class="ground"></div>
 
-    <script src="script.js"></script>
+    <!-- GSAP Animations -->
+    <script>
+        // Function to set the time-based theme
+        function setThemeBasedOnTime() {
+            const currentHour = new Date().getHours();
+            const body = document.body;
+            const sun = document.querySelector('.sun');
+            const moon = document.querySelector('.moon');
+            const stars = document.querySelector('.stars');
+
+            // Reset all classes
+            body.classList.remove('daytime', 'evening', 'night');
+            sun.classList.remove('hidden');
+            moon.classList.remove('visible');
+            stars.classList.remove('visible');
+
+            // Determine the time of day and apply the theme
+            if (currentHour >= 6 && currentHour < 18) {
+                body.classList.add('daytime'); // Daytime
+            } else if (currentHour >= 18 && currentHour < 20) {
+                body.classList.add('evening'); // Evening
+                sun.classList.add('hidden'); // Hide sun in the evening
+            } else {
+                body.classList.add('night'); // Night
+                moon.classList.add('visible'); // Show the moon
+                stars.classList.add('visible'); // Show the stars
+            }
+        }
+
+        // Call the function on load
+        setThemeBasedOnTime();
+
+        // Animate sun and moon (if needed)
+        gsap.to(".sun", {
+            y: 20,
+            duration: 3,
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut"
+        });
+
+        gsap.to(".moon", {
+            y: 15,
+            duration: 3,
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut"
+        });
+
+        // Optional: Refresh the theme every hour to keep it updated
+        setInterval(setThemeBasedOnTime, 3600000); // Check every hour
+    </script>
 </body>
 </html>
