@@ -1,6 +1,7 @@
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
 }
 
 .hero {
@@ -8,10 +9,37 @@ body {
     height: 100vh;
 }
 
+.neon-text {
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
 .card {
-    transition: transform 0.3s;
+    background-color: #111;
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 20px #0ff;
+}
+
+.btn-primary {
+    background-color: #0ff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0cc;
+}
+
+.btn-outline-light {
+    border-color: #0ff;
+    color: #0ff;
+}
+
+.btn-outline-light:hover {
+    background-color: #0ff;
+    color: #000;
 }
