@@ -9,11 +9,14 @@
 ---
 
 ## 🚀 **About Me**
-<div style="color:#ff1493; text-shadow: 0 0 5px #ff1493, 0 0 15px #ff1493;">
-- 🌱 Currently exploring advanced bot development and automation.
-- ⚡ Fun fact: I love combining ancient wisdom with modern technology.
-- 💬 Ask me about **Python**, **Bots**, or **Automation**!
-- ✨ Always open to collaborations and creative ideas.
+<div align="center" style="background: linear-gradient(90deg, rgba(57,255,20,0.5), rgba(255,20,147,0.5)); padding: 15px; border-radius: 15px; box-shadow: 0 0 20px rgba(57,255,20,0.8), 0 0 30px rgba(255,20,147,0.8);">
+  <p style="color:#ffffff; font-size:18px; line-height:1.5; text-shadow: 0 0 10px rgba(255,255,255,0.8);">
+    🌱 **Currently exploring advanced bot development and automation.**  
+    ⚡ **A curious mind combining ancient wisdom with modern technology.**  
+    💬 **Passionate about Python, Telegram Bots, and solving real-world problems.**  
+    ✨ **Always open to collaborations and creative ideas to make an impact.**
+  </p>
+  <img src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" width="300" alt="Coding GIF">
 </div>
 
 ---
