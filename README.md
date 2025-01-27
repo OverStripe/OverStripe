@@ -1,4 +1,18 @@
-<h1 align="center" style="color:#39ff14;">🌟 Welcome to OverStripe's GitHub Profile 🌟</h1>
+<h1 align="center" style="color:#ffcc00; text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00; font-family: 'Luckiest Guy', cursive; animation: glowing 2s infinite alternate; letter-spacing: 3px;">🚀 Welcome to OverStripe's Evolving GitHub Universe 🌍</h1>
+
+<style>
+@keyframes glowing {
+  0% { text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 15px #ffcc00; }
+  100% { text-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 40px #ffcc00; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+h1, p, img {
+  animation: fadeIn 2s ease-in-out;
+}
+</style>
 
 <p align="center">
   <b>सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः</b><br>
@@ -8,7 +22,7 @@
 
 ---
 
-## 🚀 About Me  
+## 🚀 About Me 💡  
 
 > 🌱 **Exploring**: AI, bot development, and automation  
 > ⚡ **Passionate**: About Python, Telegram Bots & impactful solutions  
@@ -22,7 +36,7 @@
 
 ---
 
-## 🏆 GitHub Badges  
+## 🏆 GitHub Achievements 🎖  
 
 <p align="center">
   <img src="https://img.shields.io/github/followers/OverStripe?style=social">
@@ -31,10 +45,10 @@
 
 ---
 
-## 🌟 Featured Projects & Innovations 🚀✨  
+## 🔥 Featured Projects & Innovations 🚀  
 
 <p align="center">
-  <img src="https://media.giphy.com/media/h408T6Y5GfmXBKW62l/giphy.gif" width="500">
+  <img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="500">
 </p>  
 
 ### 🤖 AI & Automation 🧠
@@ -51,11 +65,19 @@
 
 ---
 
-## 📈 GitHub Stats  
+## 📊 GitHub Analytics & Achievements 📈  
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=OverStripe&theme=dracula&column=7" width="600">
+</p>
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=OverStripe&show_icons=true&theme=radical" width="400">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=OverStripe&layout=compact&theme=radical" width="400">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=OverStripe&theme=radical" width="400">
+</p>
+
+<p align="center">
+  <img src="https://activity-graph.herokuapp.com/graph?username=OverStripe&theme=react-dark" width="800">
 </p>
 
 ---
