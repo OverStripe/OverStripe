@@ -1,6 +1,4 @@
-<h1 align="center" style="color:#ffcc00; text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00; font-family: 'Luckiest Guy', cursive; animation: glowing 2s infinite alternate; letter-spacing: 3px;">
-🚀 Welcome to OverStripe's Evolving GitHub Universe 🌍
-</h1>
+<h1 align="center" style="color:#ffcc00; text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00; font-family: 'Luckiest Guy', cursive; animation: glowing 2s infinite alternate; letter-spacing: 3px;">🚀 Welcome to OverStripe's Evolving GitHub Universe 🌍</h1>
 
 <style>
 @keyframes glowing {
@@ -24,12 +22,12 @@ h1, p, img {
 
 ---
 
-## 🚀 About Me 💡  
+# 🌟 About Me
 
 > 🌱 **Exploring**: AI, bot development, and automation  
-> ⚡ **Passionate**: About Python, Telegram Bots & impactful solutions  
-> 💡 **Philosophy**: Merging ancient wisdom with modern technology  
-> 🛠 **Currently Working On**: A cutting-edge automation system  
+> ⚡ **Passionate About**: Python, Telegram Bots & impactful solutions  
+> 💡 **Philosophy**: Combining ancient wisdom with modern technology  
+> 🛠 **Current Projects**: Cutting-edge automation systems  
 > 💬 **Ask Me About**: Python, APIs, and AI automation  
 
 <p align="center">
@@ -38,7 +36,7 @@ h1, p, img {
 
 ---
 
-## 🏆 GitHub Achievements 🎖  
+# 🏆 GitHub Achievements
 
 <p align="center">
   <img src="https://img.shields.io/github/followers/OverStripe?style=social">
@@ -47,27 +45,27 @@ h1, p, img {
 
 ---
 
-## 🔥 Featured Projects & Innovations 🚀  
+# 🚀 Featured Projects
 
 <p align="center">
   <img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="500">
 </p>  
 
-### 🤖 AI & Automation 🧠
-- **Smart Task Manager** - An AI-driven task manager that automates scheduling and prioritization.
-- **AutoResponder Bot** - A Telegram bot that intelligently responds to user queries with AI-powered suggestions.
+## 🤖 AI & Automation
+- **Smart Task Manager** - AI-driven task management automation.
+- **AutoResponder Bot** - AI-powered Telegram bot for intelligent replies.
 
-### 🔐 Cybersecurity & Encryption 🔥
-- **SecureFile Locker** - A cross-platform file encryption tool for securely storing sensitive documents.
-- **Network Intrusion Detector** - An AI-powered tool that detects unusual network activities and potential threats.
+## 🔐 Cybersecurity & Encryption
+- **SecureFile Locker** - A cross-platform file encryption tool.
+- **Network Intrusion Detector** - AI-powered network security analysis.
 
-### 🌍 Web & API Development 🌐
-- **Weather Insight API** - A REST API providing real-time weather insights and predictions.
-- **Web Scraper Pro** - A powerful, customizable tool for extracting data from websites effortlessly.
+## 🌍 Web & API Development
+- **Weather Insight API** - Real-time weather API and forecasting.
+- **Web Scraper Pro** - Customizable web scraping automation.
 
 ---
 
-## 📊 GitHub Analytics & Achievements 📈  
+# 📊 GitHub Analytics
 
 <p align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=OverStripe&theme=dracula&column=7" width="600">
@@ -79,19 +77,19 @@ h1, p, img {
 </p>
 
 <p align="center">
-  <img src="https://activity-graph.herokuapp.com/graph?username=OverStripe&theme=react-dark" width="800">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=OverStripe&theme=react-dark" width="800">
 </p>
 
 ---
 
-## 📚 Blog & Learning  
+# 📚 Blog & Learning
 
 📝 **Recent Articles** (Coming Soon...)  
-📖 **Learning**: Rust, AI-driven automation, and blockchain technology  
+📖 **Currently Learning**: Rust, AI-driven automation, blockchain technology  
 
 ---
 
-## 🌎 Connect with Me  
+# 🌎 Connect with Me
 
 <p align="center">
   <a href="https://github.com/OverStripe">
@@ -107,11 +105,12 @@ h1, p, img {
 
 ---
 
-## 🎨 Fun Corner  
+# 🎨 Fun Corner
 - 🎯 **Favorite Quote:** "Code is like humor. When you have to explain it, it’s bad."  
-- 🕹 **Hobby:** Experimenting with APIs and learning new frameworks  
-- 🍀 **Philosophy:** Merge ancient teachings with cutting-edge tech for a better world  
+- 🕹 **Hobby:** Experimenting with APIs, learning new frameworks  
+- 🍀 **Philosophy:** Merge ancient teachings with cutting-edge tech  
 
 ---
 
 <p align="center">✨ Crafted with passion and innovation by <b>OverStripe</b> ✨</p>
+
