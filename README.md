@@ -1,4 +1,6 @@
-<h1 align="center" style="color:#ffcc00; text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00; font-family: 'Luckiest Guy', cursive; animation: glowing 2s infinite alternate; letter-spacing: 3px;">🚀 Welcome to OverStripe's Evolving GitHub Universe 🌍</h1>
+<h1 align="center" style="color:#ffcc00; text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00; font-family: 'Luckiest Guy', cursive; animation: glowing 2s infinite alternate; letter-spacing: 3px;">
+🚀 Welcome to OverStripe's Evolving GitHub Universe 🌍
+</h1>
 
 <style>
 @keyframes glowing {
@@ -113,4 +115,3 @@ h1, p, img {
 ---
 
 <p align="center">✨ Crafted with passion and innovation by <b>OverStripe</b> ✨</p>
-
