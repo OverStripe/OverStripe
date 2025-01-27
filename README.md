@@ -1,19 +1,5 @@
 <h1 align="center" style="color:#ffcc00; text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00; font-family: 'Luckiest Guy', cursive; animation: glowing 2s infinite alternate; letter-spacing: 3px;">🚀 Welcome to OverStripe's Evolving GitHub Universe 🌍</h1>
 
-<style>
-@keyframes glowing {
-  0% { text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 15px #ffcc00; }
-  100% { text-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 40px #ffcc00; }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-h1, p, img {
-  animation: fadeIn 2s ease-in-out;
-}
-</style>
-
 <p align="center">
   <b>सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः</b><br>
   <i>(May all be happy; may all be free from illness.)</i><br>
