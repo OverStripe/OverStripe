@@ -31,14 +31,23 @@
 
 ---
 
-## 🔥 My Top Repositories  
+## 🌟 Featured Projects & Innovations 🚀✨  
 
-| 🚀 Project | 📜 Description | 🔧 Tech Stack |
-|-----------|--------------|--------------|
-| [Telegraph](https://github.com/OverStripe/Telegraph) | Telegram bot for converting images into Telegraph URLs. | Python, Telegram Bot API |
-| [OverStripe](https://github.com/OverStripe/OverStripe) | A web-based project featuring creative experiments. | HTML, CSS |
-| [Watermark](https://github.com/OverStripe/Watermark) | A bot for adding watermarks to media files. | Python, Image Editing |
-| [Unban](https://github.com/OverStripe/Unban) | A utility tool for handling unban requests efficiently. | Python, Automation |
+<p align="center">
+  <img src="https://media.giphy.com/media/h408T6Y5GfmXBKW62l/giphy.gif" width="500">
+</p>  
+
+### 🤖 AI & Automation 🧠
+- **Smart Task Manager** - An AI-driven task manager that automates scheduling and prioritization.
+- **AutoResponder Bot** - A Telegram bot that intelligently responds to user queries with AI-powered suggestions.
+
+### 🔐 Cybersecurity & Encryption 🔥
+- **SecureFile Locker** - A cross-platform file encryption tool for securely storing sensitive documents.
+- **Network Intrusion Detector** - An AI-powered tool that detects unusual network activities and potential threats.
+
+### 🌍 Web & API Development 🌐
+- **Weather Insight API** - A REST API providing real-time weather insights and predictions.
+- **Web Scraper Pro** - A powerful, customizable tool for extracting data from websites effortlessly.
 
 ---
 
@@ -82,3 +91,4 @@
 ---
 
 <p align="center">✨ Crafted with passion and innovation by <b>OverStripe</b> ✨</p>
+
